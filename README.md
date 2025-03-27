@@ -1,6 +1,5 @@
 # nginx-kubernetes-practice
-
-## Aufgabe: Deployment eines Nginx-Webservers mit Kubernetes Ziel:
+# Aufgabe: Deployment eines Nginx-Webservers mit Kubernetes Ziel:
 
 ## Erstelle einen Pod, ein Deployment mit mehreren Replikaten und einen Service für Nginx in Kubernetes.
 
@@ -17,6 +16,15 @@
    Überprüfe, ob das Deployment, die Pods und der Service erfolgreich erstellt wurden.
    Greife über Minikube oder den NodePort auf die Nginx-Anwendung zu.
 
+```sh
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+```
+
+```sh
+minikube service nginx-nodeport
+```
+
 3. Deployment skalieren
    Erhöhe die Anzahl der Replikate des Deployments auf 5. Überprüfe, ob die neuen Pods gestartet wurden.
 
@@ -25,7 +33,7 @@ kubectl scale deployment nginx-deploy --replicas=5
 kubectl get pods
 ```
 
-5. Ressourcen bereinigen
+4. Ressourcen bereinigen
    Lösche alle erstellten Ressourcen über die YAML-Datei, um das Cluster aufzuräumen.
 
 ## Clean Up
@@ -36,3 +44,4 @@ kubectl delete service --all
 kubectl delete deployment --all
 kubectl delete persistentvolumeclaim --all
 ```
+
