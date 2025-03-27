@@ -20,7 +20,12 @@
 3. Deployment skalieren
    Erhöhe die Anzahl der Replikate des Deployments auf 5. Überprüfe, ob die neuen Pods gestartet wurden.
 
-4. Ressourcen bereinigen
+   ```sh
+kubectl scale deployment nginx-deploy --replicas=5
+kubectl get pods
+```
+
+5. Ressourcen bereinigen
    Lösche alle erstellten Ressourcen über die YAML-Datei, um das Cluster aufzuräumen.
 
 ## Clean Up
